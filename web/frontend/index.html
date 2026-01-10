@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PawPaw Mall</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===== NAV BAR LAYOUT ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;            /* Vertically center */
+      padding: 15px 30px;
+      border-bottom: 1px solid #ddd;
+      background-color: white;
+    }
+
+    /* --- Left Section (Logo + Brand + Links) --- */
+    .nav-left-container {
+      display: flex;
+      align-items: center;
+      gap: 30px; /* Gap between the brand group and the menu */
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .brand-name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px; /* Gap between navigation links */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ff6b6b; /* Change color on hover */
+    }
+
+    /* --- Right Section (SVG Icons) --- */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px; /* Gap between icons */
+    }
+
+    /* General styles for icon buttons */
+    .icon-btn {
+      color: #374151; /* Dark gray */
+      text-decoration: none;
+      display: flex; /* Center SVG within the button */
+      align-items: center;
+      justify-content: center;
+      padding: 8px; /* Increase clickable area */
+      border-radius: 50%; /* Circular background */
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      color: #000;       /* Turn pure black on hover */
+      background-color: #f3f4f6; /* Light gray background circle on hover */
+      transform: scale(1.05);    /* Slightly scale up */
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+  <div class="nav-left-container">
+
+    <a href="#" class="brand-group">
+      <div class="logo">🐾</div>
+      <div class="brand-name">PawPawMall</div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+    </div>
+
+  </div>
+
+  <div class="nav-right">
+
+    <a href="#" class="icon-btn" title="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+
+    <a href="#" class="icon-btn" title="Profile">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </a>
+
+    <a href="#" class="icon-btn" title="Liked Items">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+    </a>
+
+    <a href="#" class="icon-btn" title="Cart">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+    </a>
+
+  </div>
+
+</div>
+
+<div class="container">
+</div>
+
+</body>
+</html>
