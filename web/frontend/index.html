@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PawPaw Mall</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===== NAV BAR LAYOUT ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between; /* Space between left and right sections */
+      align-items: center;            /* Vertically center items */
+      padding: 15px 30px;
+      border-bottom: 1px solid #ddd;
+      background-color: white;
+    }
+
+    /* --- Left Section (Logo + Brand + Links) --- */
+    .nav-left-container {
+      display: flex;
+      align-items: center;
+      gap: 30px; /* Gap between the Brand group and the Navigation links */
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Gap between Logo and Brand text */
+      text-decoration: none; /* Remove underline */
+      color: black;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .brand-name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px; /* Gap between Home, Shop, About */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ff6b6b; /* Change color on hover */
+    }
+
+    /* --- Right Section (Icons) --- */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px; /* Gap between icons */
+      font-size: 20px;
+    }
+
+    .nav-right a {
+      text-decoration: none;
+      color: black;
+      transition: transform 0.2s; /* Smooth transition */
+    }
+
+    .nav-right a:hover {
+      transform: scale(1.1); /* Slight zoom on hover */
+    }
+
+    /* ===== PAGE CONTENT PLACEHOLDER ===== */
+    .container {
+      padding: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+  <div class="nav-left-container">
+
+    <a href="#" class="brand-group">
+      <div class="logo">🐾</div>
+      <div class="brand-name">PawPawMall</div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+    </div>
+
+  </div>
+
+  <div class="nav-right">
+    <a href="#" title="Search">🔍</a>
+    <a href="#" title="Login / Profile">👤</a>
+    <a href="#" title="Liked Items">❤️</a>
+    <a href="#" title="Cart">🛍️</a>
+  </div>
+
+</div>
+
+<div class="container">
+</div>
+
+</body>
+</html>
