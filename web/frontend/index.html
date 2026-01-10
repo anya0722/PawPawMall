@@ -13,8 +13,8 @@
     /* ===== NAV BAR LAYOUT ===== */
     .navbar {
       display: flex;
-      justify-content: space-between; /* Space between left and right sections */
-      align-items: center;            /* Vertically center items */
+      justify-content: space-between; /* 左右两端对齐 */
+      align-items: center;            /* 垂直居中 */
       padding: 15px 30px;
       border-bottom: 1px solid #ddd;
       background-color: white;
@@ -24,14 +24,14 @@
     .nav-left-container {
       display: flex;
       align-items: center;
-      gap: 30px; /* Gap between the Brand group and the Navigation links */
+      gap: 30px; /* Logo组和菜单之间的距离 */
     }
 
     .brand-group {
       display: flex;
       align-items: center;
-      gap: 10px; /* Gap between Logo and Brand text */
-      text-decoration: none; /* Remove underline */
+      gap: 10px;
+      text-decoration: none;
       color: black;
     }
 
@@ -46,7 +46,7 @@
 
     .nav-links {
       display: flex;
-      gap: 20px; /* Gap between Home, Shop, About */
+      gap: 20px; /* 菜单项之间的距离 */
     }
 
     .nav-links a {
@@ -57,30 +57,32 @@
     }
 
     .nav-links a:hover {
-      color: #ff6b6b; /* Change color on hover */
+      color: #ff6b6b; /* 悬停变色 */
     }
 
-    /* --- Right Section (Icons) --- */
+    /* --- Right Section (SVG Icons) --- */
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px; /* Gap between icons */
-      font-size: 20px;
+      gap: 15px; /* 图标之间的距离 */
     }
 
-    .nav-right a {
+    /* 图标按钮通用样式 */
+    .icon-btn {
+      color: #374151; /* 深灰色 */
       text-decoration: none;
-      color: black;
-      transition: transform 0.2s; /* Smooth transition */
+      display: flex; /* 让SVG在按钮里居中 */
+      align-items: center;
+      justify-content: center;
+      padding: 8px; /* 增加点击范围 */
+      border-radius: 50%; /* 圆形背景 */
+      transition: all 0.2s;
     }
 
-    .nav-right a:hover {
-      transform: scale(1.1); /* Slight zoom on hover */
-    }
-
-    /* ===== PAGE CONTENT PLACEHOLDER ===== */
-    .container {
-      padding: 24px;
+    .icon-btn:hover {
+      color: #000;       /* 悬停变纯黑 */
+      background-color: #f3f4f6; /* 悬停出现浅灰背景圆圈 */
+      transform: scale(1.05);    /* 微微放大 */
     }
   </style>
 </head>
@@ -105,10 +107,23 @@
   </div>
 
   <div class="nav-right">
-    <a href="#" title="Search">🔍</a>
-    <a href="#" title="Login / Profile">👤</a>
-    <a href="#" title="Liked Items">❤️</a>
-    <a href="#" title="Cart">🛍️</a>
+
+    <a href="#" class="icon-btn" title="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+
+    <a href="#" class="icon-btn" title="Profile">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    </a>
+
+    <a href="#" class="icon-btn" title="Liked Items">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+    </a>
+
+    <a href="#" class="icon-btn" title="Cart">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+    </a>
+
   </div>
 
 </div>
