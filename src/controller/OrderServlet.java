@@ -45,8 +45,40 @@ public class OrderServlet extends HttpServlet {
         request.getRequestDispatcher("order.jsp").forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(request, response);
+
+        // Get current session and user
+        HttpSession session = request.getSession(false);
+        User user = (session != null) ? (User) session.getAttribute("currentUser") : null;
+
+        // Chek authority
+        if (user == null || !"admin".equalsIgnoreCase(user.getRole())) {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied: Admin only.");
+            return;
+        }
+
+        String orderIdStr = request.getParameter("orderId");
+        String newStatus = request.getParameter("status");
+
+        if (orderIdStr != null && newStatus != null) {
+            try {
+                int orderId = Integer.parseInt(orderIdStr);
+
+                // Update the status
+                boolean success = orderDAO.updateOrderStatus(orderId, newStatus);
+
+                if (success) {
+                    response.sendRedirect("OrderServlet?msg=update_success");
+                } else {
+                    response.sendRedirect("OrderServlet?msg=update_failed");
+                }
+            } catch (NumberFormatException e) {
+                response.sendRedirect("OrderServlet?msg=invalid_id");
+            }
+        }
     }
+
+
 }
