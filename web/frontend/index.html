@@ -291,3 +291,140 @@
     }
   }
 </style>
+
+<section class="category-section">
+  <div class="category-container">
+
+    <h2 class="section-title">Shop by Category</h2>
+
+    <div class="category-grid">
+
+      <div class="category-card" onclick="loadCategory('new_arrival')">
+        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="New Arrivals" class="cat-img">
+        <div class="overlay"></div>
+        <span class="cat-name">New Arrivals</span>
+      </div>
+
+      <div class="category-card" onclick="loadCategory('cat_toys')">
+        <img src="https://images.unsplash.com/photo-1729008764855-9b5257318beb?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cat Toys" class="cat-img">
+        <div class="overlay"></div>
+        <span class="cat-name">Cat Toys</span>
+      </div>
+
+      <div class="category-card" onclick="loadCategory('cat_food')">
+        <img src="https://images.unsplash.com/photo-1591324535489-9c78376631dc?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cat Food" class="cat-img">
+        <div class="overlay"></div>
+        <span class="cat-name">Cat Food</span>
+      </div>
+
+      <div class="category-card" onclick="loadCategory('on_sale')">
+        <img src="https://images.unsplash.com/photo-1695390838800-ee7886efb253?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="On Sale" class="cat-img">
+        <div class="overlay"></div>
+        <span class="cat-name">On Sale</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* --- Category Section Layout --- */
+  .category-section {
+    padding: 80px 20px;
+    background-color: white;
+  }
+
+  .category-container {
+    max-width: 1200px; /* Limit max width to prevent stretching on large screens */
+    margin: 0 auto;    /* Center alignment */
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 48px; /* Gap between title and cards */
+  }
+
+  /* --- Grid Layout (Responsive) --- */
+  .category-grid {
+    display: grid;
+    /* Default for mobile: 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px; /* Gap between cards */
+  }
+
+  /* Large screens (Desktop): switch to 4 columns */
+  @media (min-width: 992px) {
+    .category-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* --- Card Styling --- */
+  .category-card {
+    position: relative;
+    border-radius: 16px;       /* Rounded corners */
+    overflow: hidden;          /* Ensure image doesn't overflow corners when zoomed */
+    aspect-ratio: 1 / 1;       /* Force square aspect ratio */
+    cursor: pointer;           /* Change cursor to pointer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Card hover effect: float up + shadow */
+  .category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* --- Image Styling --- */
+  .cat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Fill container without distortion */
+    transition: transform 0.5s ease; /* Animation duration for image zoom */
+  }
+
+  /* Zoom image on hover */
+  .category-card:hover .cat-img {
+    transform: scale(1.1);
+  }
+
+  /* --- Overlay --- */
+  .overlay {
+    position: absolute;
+    inset: 0;                  /* Cover the entire card */
+    background-color: rgba(0, 0, 0, 0.2); /* Slight dark layer by default to improve text readability */
+    transition: background-color 0.3s ease;
+  }
+
+  /* Darken overlay slightly on hover */
+  .category-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* --- Text Styling --- */
+  .cat-name {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem; /* Approx 20px */
+
+    /* Absolute centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Text shadow for readability against bright backgrounds */
+    pointer-events: none; /* Allow clicks to pass through text to the card */
+  }
+
+  /* Larger text for desktop */
+  @media (min-width: 768px) {
+    .cat-name {
+      font-size: 1.5rem; /* 24px */
+    }
+  }
+</style>
