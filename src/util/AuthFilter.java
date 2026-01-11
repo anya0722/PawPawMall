@@ -41,7 +41,7 @@ public class AuthFilter implements Filter {
         boolean isAdminPage = uri.contains("admin_") || uri.endsWith("AdminServlet");
         //Check for admin only pages
         if (isAdminPage) {
-            if (currentUser != null && "Admin".equals(currentUser.getRole())) {
+            if (currentUser != null && "admin".equals(currentUser.getRole())) {
                 chain.doFilter(request, response);
             } else {
                 httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied: Admin only.");
