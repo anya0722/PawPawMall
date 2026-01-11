@@ -1021,3 +1021,337 @@ margin: 0;
 }
 </style>
 
+<footer class="footer-section">
+  <div class="footer-bg-paw">
+    <span>🐾</span>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-newsletter">
+        <div class="newsletter-card">
+          <h2 class="newsletter-title">
+            Get In Touch <br />
+            <span class="text-orange">With Us</span>
+            <span class="emoji-bounce">💬</span>
+          </h2>
+          <p class="newsletter-description">
+            Join our community of cat lovers and get expert tips delivered to your inbox.
+          </p>
+
+          <form class="newsletter-form" onsubmit="event.preventDefault()">
+            <div class="newsletter-input-wrapper">
+              <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      class="newsletter-input"
+              />
+            </div>
+            <button type="submit" class="newsletter-submit-btn">
+              Subscribe Now
+            </button>
+          </form>
+
+          <p class="newsletter-spam-note">
+            <span class="status-indicator"></span>
+            No spam, we hate it more than you do
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-navigation">
+        <h3 class="footer-column-heading">Explore</h3>
+        <ul class="vertical-nav-links">
+          <li><a href="#"><span class="hover-dash"></span>Home</a></li>
+          <li><a href="#"><span class="hover-dash"></span>Shop</a></li>
+          <li><a href="#"><span class="hover-dash"></span>About</a></li>
+          <li><a href="#"><span class="hover-dash"></span>Team</a></li>
+          <li><a href="#"><span class="hover-dash"></span>Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3 class="footer-column-heading">Connect</h3>
+
+        <div class="contact-info-list">
+          <div class="contact-entry">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <p class="contact-detail-text">
+              No: 58 A, East Madison Street,<br />Baltimore, MD, USA 4508
+            </p>
+          </div>
+
+          <div class="contact-entry clickable">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <p class="contact-detail-text">+000-123-456-789</p>
+          </div>
+
+          <div class="contact-entry clickable">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <p class="contact-detail-text">contact@pawpawmall.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p class="copyright-text">&copy; 2024 PawPawMall. Crafted with 🐾 for your best friend.</p>
+      <div class="legal-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+  /* --- Footer General Styling --- */
+  .footer-section {
+    background-color: #0b1121; /* Deep dark blue */
+    color: #ffffff;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Decorative Background Paw */
+  .footer-bg-paw {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    transform: rotate(12deg) translate(80px, -40px);
+  }
+  .footer-bg-paw span { font-size: 300px; }
+
+  /* --- Grid Layout: Uses 12-column logic --- */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(12, 1fr);
+      align-items: start;
+    }
+    .footer-newsletter { grid-column: span 6; }
+    .footer-navigation { grid-column: span 3; padding-left: 20px; }
+    .footer-contact { grid-column: span 3; }
+  }
+
+  /* --- Left Column: Newsletter Card --- */
+  .newsletter-card {
+    background-color: #161f32;
+    padding: 40px;
+    border-radius: 2rem;
+    border: 1px solid #1f2937;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .newsletter-title {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .text-orange { color: #f97316; }
+
+  /* Bounce animation for the emoji */
+  @keyframes emojiBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .emoji-bounce {
+    display: inline-block;
+    animation: emojiBounce 2s infinite;
+  }
+
+  .newsletter-description {
+    color: #9ca3af;
+    margin-bottom: 32px;
+    max-width: 350px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  @media (min-width: 640px) {
+    .newsletter-form { flex-direction: row; }
+  }
+
+  .newsletter-input {
+    width: 100%;
+    background-color: #ffffff;
+    color: #111827;
+    padding: 16px 24px;
+    border-radius: 1rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+  }
+
+  .newsletter-submit-btn {
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  .newsletter-submit-btn:hover {
+    background-color: #ea580c;
+    transform: scale(1.02);
+  }
+
+  .newsletter-spam-note {
+    font-size: 10px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #22c55e;
+  }
+
+  /* --- Middle Column: Navigation (Vertical List) --- */
+  .footer-column-heading {
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 32px;
+  }
+
+  .vertical-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Force vertical stacking */
+    gap: 20px;
+  }
+
+  .vertical-nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+  }
+
+  .hover-dash {
+    width: 0;
+    height: 2px;
+    background-color: #f97316;
+    transition: all 0.3s;
+  }
+
+  .vertical-nav-links a:hover { color: #f97316; }
+  .vertical-nav-links a:hover .hover-dash {
+    width: 12px;
+    margin-right: 8px;
+  }
+
+  /* --- Right Column: Contact --- */
+  .contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-icon-box {
+    width: 40px;
+    height: 40px;
+    background-color: #161f32;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f97316;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+
+  .contact-entry.clickable:hover .contact-icon-box {
+    background-color: #f97316;
+    color: #ffffff;
+  }
+
+  .contact-detail-text {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* --- Bottom Bar --- */
+  .footer-bottom-bar {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid #1f2937;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  @media (min-width: 640px) {
+    .footer-bottom-bar { flex-direction: row; }
+  }
+
+  .copyright-text, .legal-links a {
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+
+  .legal-links { display: flex; gap: 32px; }
+  .legal-links a:hover { color: #ffffff; }
+
+  /* --- GLOBAL FIX FOR TEAM PHOTOS --- */
+  .member-img {
+    width: 180px !important;
+    height: 180px !important;
+    object-fit: cover !important;
+  }
+</style>
