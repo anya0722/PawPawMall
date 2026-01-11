@@ -186,4 +186,34 @@ public class OrderDAO {
             return false;
         }
     }
+
+
+    public double getTotalRevenue() {
+        String sql = "SELECT SUM(total_price) FROM orders WHERE status != 'Cancelled'";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
+    }
+
+
+    public int getTotalOrderCount() {
+        String sql = "SELECT COUNT(*) FROM orders";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

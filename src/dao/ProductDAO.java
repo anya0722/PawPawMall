@@ -177,4 +177,18 @@ public class ProductDAO {
         product.setImagePath(rs.getString("image_path"));
         return product;
     }
+    // Low stock alert for admin dashboard
+    public int getLowStockCount() {
+        String sql = "SELECT COUNT(*) FROM products WHERE stock < 5";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
