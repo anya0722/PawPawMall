@@ -18,6 +18,7 @@ public class UserDAO {
             // Prevent SQL injection by using placeholders
             pstmt.setString(1, user.getUsername());
             String hashedPassword = PasswordUtil.hashPassword(user.getPassword());
+            pstmt.setString(2, hashedPassword);
             pstmt.setString(3, user.getRole());
 
             int rowsAffected = pstmt.executeUpdate();
