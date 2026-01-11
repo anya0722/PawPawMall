@@ -50,7 +50,10 @@ public class AuthFilter implements Filter {
         }
 
         // Check for log in needed pages
-        boolean isUserPage = uri.contains("cart.jsp") || uri.contains("order.jsp");
+        boolean isUserPage = uri.contains("cart.jsp") ||
+                uri.contains("order.jsp") ||
+                uri.endsWith("OrderServlet") ||
+                uri.endsWith("CheckoutServlet");
 
         if (isUserPage) {
             if (currentUser != null) {

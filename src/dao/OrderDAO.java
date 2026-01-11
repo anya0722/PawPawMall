@@ -3,13 +3,100 @@ package dao;
 import model.Order;
 import model.OrderItem;
 import model.CartItem;
+import model.Product;
 import util.DBUtil;
 import java.sql.*;
 import java.util.List;
+import java.util.ArrayList;
 
 public class OrderDAO {
 
-    //**Create order, Decrease stock, Clear cart
+    // Get order history
+    public List<Order> getOrdersByUser(int userId) {
+        List<Order> orders = new ArrayList<>();
+        // Order by time to let the newest order be placed in the front
+        String sql = "SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC";
+
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    Order order = new Order();
+                    order.setId(rs.getInt("id"));
+                    order.setUserId(rs.getInt("user_id"));
+                    order.setTotalPrice(rs.getDouble("total_price"));
+                    order.setStatus(rs.getString("status"));
+                    order.setCreatedAt(rs.getTimestamp("created_at"));
+
+                    // Get all the order items of the order
+                    order.setItems(getOrderItems(order.getId()));
+                    orders.add(order);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return orders;
+    }
+
+    private List<OrderItem> getOrderItems(int orderId) {
+        List<OrderItem> items = new ArrayList<>();
+        String sql = "SELECT oi.*, p.name, p.image_path FROM order_items oi " +
+                "JOIN products p ON oi.product_id = p.id WHERE oi.order_id = ?";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, orderId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    OrderItem item = new OrderItem();
+                    item.setId(rs.getInt("id"));
+                    item.setProductId(rs.getInt("product_id"));
+                    item.setQuantity(rs.getInt("quantity"));
+                    item.setPriceAtPurchase(rs.getDouble("price_at_purchase"));
+
+                    // For showing
+                    Product p = new Product();
+                    p.setName(rs.getString("name"));
+                    p.setImagePath(rs.getString("image_path"));
+                    item.setProduct(p);
+
+                    items.add(item);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+
+    // Method for admin to get aldl the orders
+    public List<Order> getAllOrders() {
+        List<Order> orders = new ArrayList<>();
+        String sql = "SELECT * FROM orders ORDER BY created_at DESC";
+
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                Order order = new Order();
+                order.setId(rs.getInt("id"));
+                order.setUserId(rs.getInt("user_id"));
+                order.setTotalPrice(rs.getDouble("total_price"));
+                order.setStatus(rs.getString("status"));
+                order.setCreatedAt(rs.getTimestamp("created_at"));
+                order.setItems(getOrderItems(order.getId()));
+                orders.add(order);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return orders;
+    }
+
+    // Create order, Decrease stock, Clear cart
     public boolean checkout(int userId, double totalPrice, List<CartItem> cartItems) {
         String insertOrderSql = "INSERT INTO orders (user_id, total_price, status) VALUES (?, ?, 'Pending')";
         String insertItemSql = "INSERT INTO order_items (order_id, product_id, quantity, price_at_purchase) VALUES (?, ?, ?, ?)";
@@ -45,7 +132,7 @@ public class OrderDAO {
 
                     psStock.setInt(1, item.getQuantity());
                     psStock.setInt(2, item.getProductId());
-                    psStock.setInt(3, item.getQuantity()); 
+                    psStock.setInt(3, item.getQuantity());
 
                     int affectedRows = psStock.executeUpdate();
                     if (affectedRows == 0) {
