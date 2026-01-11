@@ -20,7 +20,7 @@ public class AdminRegisterServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
 
-        if (currentUser == null || !"0".equals(currentUser.getRole())) {
+        if (currentUser == null || !"Admin".equals(currentUser.getRole())) {
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Sorry. You are not allowed to perform this action.");
             return;
         }
