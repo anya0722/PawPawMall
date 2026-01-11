@@ -133,3 +133,161 @@
 
 </body>
 </html>
+
+<div class="hero-section">
+  <div class="hero-wrapper">
+
+    <div class="hero-text">
+      <h1 class="hero-title">
+        Your Pet, <br>
+        <span class="highlight-orange">Our Priority</span>
+      </h1>
+      <p class="hero-desc">
+        Expertly selected cat food and toys to fuel their zoomies and purrs. Only the best for your paw-some friends.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Discover More</a>
+        <a href="#" class="btn btn-secondary">Log in</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="blob blob-orange"></div>
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Happy Cat" class="hero-img">
+    </div>
+
+  </div>
+</div>
+
+<style>
+  /* --- Hero Section Layout --- */
+  .hero-section {
+    background-color: #FFF9F2; /* Warm beige background */
+    padding: 80px 20px;       /* Vertical spacing */
+    overflow: hidden;         /* Prevents decorative blobs from overflowing */
+    position: relative;
+  }
+
+  /* Wrapper to align content center and split left/right */
+  .hero-wrapper {
+    max-width: 1100px;        /* Limit maximum width */
+    margin: 0 auto;           /* Center alignment */
+    display: flex;            /* Flexbox layout */
+    align-items: center;      /* Vertically center items */
+    justify-content: space-between; /* Space between text and image */
+    gap: 50px;                /* Gap between columns */
+  }
+
+  /* --- Left Column: Text Content --- */
+  .hero-text {
+    flex: 1;                  /* Takes up 50% width */
+    z-index: 2;               /* Ensures text stays on top */
+  }
+
+  .hero-title {
+    font-size: 60px;          /* Large heading size */
+    font-weight: 800;         /* Extra bold */
+    line-height: 1.1;
+    color: #111827;           /* Dark grey text */
+    margin-bottom: 20px;
+  }
+
+  .highlight-orange {
+    color: #f97316;           /* Bright orange highlight color */
+  }
+
+  .hero-desc {
+    font-size: 18px;
+    color: #4b5563;           /* Medium grey text */
+    margin-bottom: 40px;
+    line-height: 1.6;         /* Better readability */
+    max-width: 480px;
+  }
+
+  /* --- Buttons Group --- */
+  .hero-buttons {
+    display: flex;
+    gap: 15px;                /* Space between buttons */
+  }
+
+  .btn {
+    padding: 15px 35px;
+    border-radius: 50px;      /* Pill-shaped buttons */
+    font-weight: bold;
+    text-decoration: none;    /* Remove underline */
+    transition: transform 0.2s; /* Smooth animation */
+    display: inline-block;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);   /* Slight zoom effect on hover */
+  }
+
+  /* Primary Button (Solid Orange) */
+  .btn-primary {
+    background-color: #f97316;
+    color: white;
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); /* Soft shadow */
+  }
+
+  /* Secondary Button (Outline) */
+  .btn-secondary {
+    background-color: white;
+    color: #f97316;
+    border: 2px solid #f97316;
+  }
+
+  /* --- Right Column: Visuals --- */
+  .hero-visual {
+    flex: 1;                  /* Takes up the other 50% width */
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 450px;         /* Restrict image width */
+    border-radius: 24px;      /* Rounded corners */
+    transform: rotate(3deg);  /* Slight rotation for dynamic look */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Deep shadow */
+    z-index: 2;
+    transition: transform 0.5s;
+  }
+
+  .hero-img:hover {
+    transform: rotate(0deg);  /* Straighten image on hover */
+  }
+
+  /* Decorative Background Blob (Blurred Circle) */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);       /* Gaussian blur effect */
+    z-index: 1;               /* Behind the image */
+  }
+
+  .blob-orange {
+    width: 300px;
+    height: 300px;
+    background-color: #fed7aa; /* Light orange */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the blob */
+  }
+
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 768px) {
+    .hero-wrapper {
+      flex-direction: column; /* Stack vertically on small screens */
+      text-align: center;
+    }
+    .hero-buttons {
+      justify-content: center;
+    }
+    .hero-img {
+      transform: rotate(0deg); /* No rotation on mobile */
+      margin-top: 30px;
+    }
+  }
+</style>
