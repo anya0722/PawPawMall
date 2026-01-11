@@ -4,6 +4,7 @@ import dao.CartDAO;
 import dao.OrderDAO;
 import model.CartItem;
 import model.User;
+import model.Cart;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,14 +41,9 @@ public class CheckoutServlet extends HttpServlet {
         }
 
 
-        double totalPrice = 0;
-        for (CartItem item : cartItems) {
-            if (item.getProduct() != null) {
-                totalPrice += item.getProduct().getPrice() * item.getQuantity();
-            }
-        }
-
-
+        Cart cart = new Cart();
+        cart.setItems(cartItems);
+        double totalPrice = cart.getTotalPrice();
         boolean isSuccess = orderDAO.checkout(user.getId(), totalPrice, cartItems);
 
         if (isSuccess) {
