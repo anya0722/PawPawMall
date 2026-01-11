@@ -25,7 +25,7 @@ import java.io.IOException;
             request.setAttribute("totalRevenue", totalRevenue);
             request.setAttribute("totalOrders", totalOrders);
             request.setAttribute("lowStock", lowStock);
-            
+
             request.getRequestDispatcher("admin_dashboard.jsp").forward(request, response);
         }
     }

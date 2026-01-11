@@ -15,14 +15,14 @@ public class FileUploadUtil {
 
         File uploadDir = new File(uploadDirPath);
         if (!uploadDir.exists()) {
-            uploadDir.mkdir();
+            uploadDir.mkdirs();
         }
 
         // Get the original file name
         String fileName = getFileName(filePart);
         // Generate a unique filename to prevent duplicating
         String uniqueFileName = UUID.randomUUID().toString() + "_" + fileName;
-        
+
         filePart.write(uploadDirPath + File.separator + uniqueFileName);
 
         return "uploads/" + uniqueFileName;

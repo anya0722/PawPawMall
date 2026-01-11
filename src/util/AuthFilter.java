@@ -37,6 +37,7 @@ public class AuthFilter implements Filter {
                 uri.endsWith("RegisterServlet") ||
                 uri.contains("/assets/") || // The place storing images
                 uri.endsWith("HomePageDesignDraft.jpg") ||
+                uri.contains("/uploads/") ||
                 uri.endsWith("/index");
 
         boolean isAdminPage = uri.contains("admin_") || uri.endsWith("AdminServlet");
