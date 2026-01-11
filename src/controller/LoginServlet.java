@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("currentUser", user);
 
             // Jump to different pages depends on the role of user (normal user or admin）
-            if ("Admin".equalsIgnoreCase(user.getRole())) {
+            if ("admin".equalsIgnoreCase(user.getRole())) {
                 response.sendRedirect("admin_dashboard.jsp"); // Going to admin dashboard
             } else {
                 response.sendRedirect("index.jsp"); // Back to homepage

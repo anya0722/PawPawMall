@@ -130,6 +130,6 @@ public class ProductManagementServlet extends HttpServlet {
     private boolean isAdmin(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         User user = (session != null) ? (User) session.getAttribute("currentUser") : null;
-        return user != null && "Admin".equals(user.getRole());
+        return user != null && "admin".equals(user.getRole());
     }
 }

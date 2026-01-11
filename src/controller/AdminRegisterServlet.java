@@ -20,7 +20,7 @@ public class AdminRegisterServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
 
-        if (currentUser == null || !"Admin".equals(currentUser.getRole())) {
+        if (currentUser == null || !"admin".equals(currentUser.getRole())) {
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Sorry. You are not allowed to perform this action.");
             return;
         }
@@ -42,7 +42,7 @@ public class AdminRegisterServlet extends HttpServlet {
             User newAdmin = new User();
             newAdmin.setUsername(username);
             newAdmin.setPassword(password);
-            newAdmin.setRole("Admin");
+            newAdmin.setRole("admin");
 
             UserDAO userDAO = new UserDAO();
             if (userDAO.register(newAdmin)) {
