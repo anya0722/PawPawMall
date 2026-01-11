@@ -2,6 +2,8 @@ package dao;
 
 import model.User;
 import util.DBUtil;
+import util.PasswordUtil;
+
 import java.sql.*;
 
 public class UserDAO {
@@ -15,7 +17,7 @@ public class UserDAO {
 
             // Prevent SQL injection by using placeholders
             pstmt.setString(1, user.getUsername());
-            pstmt.setString(2, user.getPassword());
+            String hashedPassword = PasswordUtil.hashPassword(user.getPassword());
             pstmt.setString(3, user.getRole());
 
             int rowsAffected = pstmt.executeUpdate();
@@ -35,7 +37,7 @@ public class UserDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, username);
-            pstmt.setString(2, password);
+            String hashedPassword = PasswordUtil.hashPassword(password);
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {

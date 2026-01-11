@@ -47,4 +47,9 @@ CREATE TABLE IF NOT EXISTS order_items (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
-INSERT INTO users (username, password, role) VALUES ('admin', '123456', 'admin');
+
+USE pawpawmall;
+
+UPDATE users 
+SET password = 'jZae7lFkcGVEra19bRGpp0TInQDZRSyWL6CZUwl8CgM='
+WHERE username = 'admin';
