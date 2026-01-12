@@ -28,9 +28,48 @@
         .preview-box { width: 100%; height: 180px; border: 2px dashed #e2e8f0; border-radius: 12px; margin-top: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #f8fafc; }
         #imagePreview { max-width: 100%; max-height: 100%; display: none; }
         #previewPlaceholder { color: #94a3b8; font-size: 0.9rem; }
+
+        /* Added a toast pop-up window for success message */
+        .toast-success {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #10b981;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 3000;
+            animation: slideInRight 0.5s ease-out, fadeOut 0.5s ease-out 2.5s forwards;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
     </style>
 </head>
 <body class="admin-body">
+
+
+<% String msg = request.getParameter("msg"); %>
+<% if ("update_success".equals(msg)) { %>
+<div id="toast-notification" class="toast-success">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Product information edited sucessfully!</span>
+</div>
+<% } %>
+
+
+
 
 <div class="admin-page-container">
     <div class="page-header">
