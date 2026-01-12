@@ -72,22 +72,26 @@
         <% if (productList != null) {
             for (Product p : productList) { %>
         <div class="item-card">
-            <img src="<%= ctx %>/<%= p.getImagePath() %>" alt="<%= p.getName() %>">
-            <div class="item-info">
-                <h3><%= p.getName() %></h3>
-                <p class="price">$<%= p.getPrice() %></p>
-                <form action="<%= ctx %>/CartServlet" method="post" style="display: inline;">
-                    <input type="hidden" name="action" value="add">
-                    <input type="hidden" name="productId" value="<%= p.getId() %>">
-                    <button type="submit" class="add-to-cart" style="border: none; background: none; cursor: pointer; padding: 0;">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </form>
-            </div>
+            <a href="<%= ctx %>/ProductDetail?id=<%= p.getId() %>" style="text-decoration:none; color:inherit;">
+                <div class="item-img">
+                    <img src="<%= ctx %>/<%= p.getImagePath() %>" alt="<%= p.getName() %>">
+                </div>
+                <div class="item-info">
+                    <h3><%= p.getName() %></h3>
+                    <div class="item-footer">
+                        <span class="price">$<%= String.format("%.2f", p.getPrice()) %></span>
+                        <form action="<%= ctx %>/CartServlet" method="post" style="display:inline;">
+                            <input type="hidden" name="action" value="add">
+                            <input type="hidden" name="productId" value="<%= p.getId() %>">
+                            <button type="submit" class="add-to-cart" style="border:none; background:none; cursor:pointer; padding:0;">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </a>
         </div>
-        <% } } else { %>
-        <p>No products found. Please check HomeServlet logic.</p>
-        <% } %>
+        <% } } %>
     </div>
 </section>
 

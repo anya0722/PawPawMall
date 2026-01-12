@@ -70,30 +70,29 @@
                 <% if (productList != null && !productList.isEmpty()) {
                     for (Product p : productList) { %>
                 <div class="item-card">
-                    <div class="item-img">
-                        <img src="<%= ctx %>/<%= p.getImagePath() %>" alt="<%= p.getName() %>">
-                    </div>
+                    <a href="<%= ctx %>/ProductDetail?id=<%= p.getId() %>">
+                        <div class="item-img">
+                            <img src="<%= ctx %>/<%= p.getImagePath() %>" alt="<%= p.getName() %>">
+                        </div>
+                    </a>
                     <div class="item-info">
                         <p class="category-label"><%= p.getCategory() %></p>
-                        <h3><%= p.getName() %></h3>
+                        <a href="<%= ctx %>/ProductDetail?id=<%= p.getId() %>" style="text-decoration:none; color:inherit;">
+                            <h3><%= p.getName() %></h3>
+                        </a>
                         <div class="item-footer">
                             <span class="price">$<%= String.format("%.2f", p.getPrice()) %></span>
-                            <form action="<%= ctx %>/CartServlet" method="post" style="display: inline;">
+                            <form action="<%= ctx %>/CartServlet" method="post" style="display:inline;">
                                 <input type="hidden" name="action" value="add">
                                 <input type="hidden" name="productId" value="<%= p.getId() %>">
-                                <button type="submit" class="add-to-cart" style="border: none; background: none; cursor: pointer; padding: 0;">
+                                <button type="submit" class="add-to-cart" style="border:none; background:none; cursor:pointer; padding:0;">
                                     <i class="fa-solid fa-cart-plus"></i>
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <% } } else { %>
-                <div class="no-results">
-                    <i class="fa-solid fa-face-frown"></i>
-                    <p>No products found matching your search.</p>
-                </div>
-                <% } %>
+                <% } } %>
             </div>
         </section>
     </div>
