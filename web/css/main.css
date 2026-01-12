@@ -1184,3 +1184,42 @@
 }
 
 
+
+
+
+.status-update-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.status-select {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: white;
+    color: #334155;
+    cursor: pointer;
+    outline: none;
+}
+
+.status-select:focus {
+    border-color: var(--primary-orange);
+}
+
+.btn-small {
+    background-color: #334155;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.3s;
+}
+
+.btn-small:hover {
+    background-color: #000;
+}

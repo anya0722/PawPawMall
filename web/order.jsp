@@ -116,24 +116,29 @@
         <div class="order-footer">
             <div class="footer-left">
                 <% if (isAdmin) { %>
-                <form action="<%= ctx %>/OrderServlet" method="post" class="admin-controls">
+                <form action="<%= ctx %>/OrderServlet" method="post" class="status-update-form">
                     <input type="hidden" name="orderId" value="<%= order.getId() %>">
-                    <select name="status" class="status-select">
+
+                    <label for="status-<%= order.getId() %>">Update Status:</label>
+                    <select name="status" id="status-<%= order.getId() %>" class="status-select">
                         <option value="Pending" <%= "Pending".equals(order.getStatus()) ? "selected" : "" %>>Pending</option>
                         <option value="Shipped" <%= "Shipped".equals(order.getStatus()) ? "selected" : "" %>>Shipped</option>
                         <option value="Completed" <%= "Completed".equals(order.getStatus()) ? "selected" : "" %>>Completed</option>
                         <option value="Cancelled" <%= "Cancelled".equals(order.getStatus()) ? "selected" : "" %>>Cancelled</option>
                     </select>
-                    <button type="submit" class="update-btn">Update Status</button>
+
+                    <button type="submit" class="btn-small">Update</button>
                 </form>
+                <% } else { %>
+                <span class="status-text">Status: <strong><%= order.getStatus() %></strong></span>
                 <% } %>
             </div>
+
             <div class="footer-right">
-                <span style="color: #64748b; margin-right: 10px;">Total Amount:</span>
+                <span class="total-label">Order Total:</span>
                 <span class="total-amount">$<%= String.format("%.2f", order.getTotalPrice()) %></span>
             </div>
         </div>
-    </div>
     <%
             }
         }
