@@ -45,7 +45,7 @@ public class SearchServlet extends HttpServlet {
         request.setAttribute("searchQuery", name); // Return the keyword for showing "Here is the results about...".
 
         // Forward the result to the page that shows the searching results.
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("shop.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
