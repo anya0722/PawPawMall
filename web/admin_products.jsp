@@ -114,15 +114,17 @@
                 <textarea name="description" id="prodDesc" rows="2" style="width:100%; border:1px solid #ddd; border-radius:8px; padding:10px;"></textarea>
             </div>
 
+            <div class="form-group">
+                <label>Category</label>
+                <select name="category" id="prodCategory">
+                    <option value="New arrivals">New Arrivals</option>
+                    <option value="Cat Food">Cat Food</option>
+                    <option value="Cat Toys">Cat Toys</option>
+                    <option value="On Sale">On Sale</option>
+                </select>
+            </div>
+
             <div style="display: flex; gap: 15px;">
-                <div class="form-group" style="flex: 1;">
-                    <label>Category</label>
-                    <select name="category" id="prodCategory">
-                        <option value="Food">Food</option>
-                        <option value="Toys">Toys</option>
-                        <option value="Accessories">Accessories</option>
-                    </select>
-                </div>
                 <div class="form-group" style="flex: 1;">
                     <label>Price ($)</label>
                     <input type="number" name="price" id="prodPrice" step="0.01" required>
@@ -136,13 +138,13 @@
             <div class="form-group">
                 <label>Image Upload</label>
                 <input type="file" name="image" id="imageInput" accept="image/*" onchange="handleImagePreview()">
-                <div class="preview-box">
-                    <img src="" id="imagePreview">
+                <div class="preview-box" style="margin-top: 10px; border: 1px dashed #ccc; min-height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <img src="" id="imagePreview" style="max-width: 100%; max-height: 150px; display: none;">
                     <span id="previewPlaceholder">Preview will appear here</span>
                 </div>
             </div>
 
-            <button type="submit" class="btn-filled" style="width: 100%; margin-top: 10px;">Save Product</button>
+            <button type="submit" class="btn-filled" style="width: 100%; margin-top: 20px; padding: 12px;">Save Product</button>
         </form>
     </div>
 </div>
@@ -180,7 +182,7 @@
     }
 
     function closeModal() { modal.style.display = 'none'; }
-    
+
     function handleImagePreview() {
         const file = document.getElementById('imageInput').files[0];
         if (file) {

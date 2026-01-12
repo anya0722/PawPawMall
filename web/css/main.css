@@ -1221,6 +1221,9 @@
     position: relative;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     animation: slideDown 0.3s ease-out;
+
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @keyframes slideDown {
