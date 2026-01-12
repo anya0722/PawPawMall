@@ -84,14 +84,14 @@
             <div class="about-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
             <div class="about-text">
                 <h3>Our History</h3>
-                <p>Started as a small university project at USM, we've grown into a passionate community dedicated to providing the best for your feline friends.</p>
+                <p>PawPawMall began with a simple mission: to find the best for a 4-year-old cat of our CEO, Miaomiao. Frustrated by mystery ingredients and low-quality toys, we decided to create a curated space where premium nutrition meets pure joy. Today, we bring that same love and quality to cats everywhere.</p>
             </div>
         </div>
         <div class="about-bar">
             <div class="about-icon"><i class="fa-solid fa-shield-cat"></i></div>
             <div class="about-text">
                 <h3>Professionalism</h3>
-                <p>Every product is hand-picked by pet lovers and verified for quality, ensuring your cat stays healthy and happy.</p>
+                <p>We uphold the Miaomiao Standard. Every product is hand-picked by pet nutritionists and rigorously tested for safety. From 100% transparent ingredients to durable, cat-approved toys, we ensure the health of your feline is never compromised. If it is not good enough for our cat, it is not in our store.</p>
             </div>
         </div>
     </div>
