@@ -43,6 +43,9 @@
                         <i class="fa-solid fa-circle-user"></i>
                         <span>Hi, <%= currentUser.getUsername() %></span>
                     </div>
+                    <a href="<%= ctx %>/OrderServlet" class="icon-btn" title="My Orders">
+                        <i class="fa-solid fa-receipt"></i>
+                    </a>
                     <a href="<%= ctx %>/LogoutServlet" class="logout-link" title="Logout">
                         <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
