@@ -299,3 +299,121 @@
     color: var(--primary-orange);
     transform: translateY(-3px);
 }
+
+
+/* Auth Pages Layout */
+.auth-body {
+    background-color: var(--bg-warm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.auth-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Hidden admin portal */
+.admin-entrance {
+    margin-top: 25px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.admin-entrance a {
+    color: #bbc9d8;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.admin-entrance a:hover {
+    color: #94a3b8;
+}
+
+
+.user-menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8fafc;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #334155;
+}
+
+
+.logout-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.logout-link:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}

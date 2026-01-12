@@ -31,16 +31,24 @@
 
             <div class="nav-right">
                 <% if (currentUser == null) { %>
+                <%-- For those havn;t logged in --%>
                 <a href="<%= ctx %>/login.jsp" class="icon-btn">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-label">Log In</span>
                 </a>
                 <% } else { %>
-                <div class="user-greeting">
-                    <i class="fa-solid fa-circle-user"></i>
-                    <span>Hi, <%= currentUser.getUsername() %></span>
+                <%-- logged in users --%>
+                <div class="user-menu-wrapper">
+                    <div class="user-greeting">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Hi, <%= currentUser.getUsername() %></span>
+                    </div>
+                    <a href="<%= ctx %>/LogoutServlet" class="logout-link" title="Logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
                 </div>
                 <% } %>
+
                 <a href="<%= ctx %>/CartServlet" class="icon-btn">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
