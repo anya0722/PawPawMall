@@ -14,7 +14,7 @@
 
 .hero-image img {
     width: 100%;
-    border-radius: 40px; 
+    border-radius: 40px;
     box-shadow: 20px 20px 60px #d9d4cf, -20px -20px 60px #ffffff;
 }
 
@@ -48,4 +48,80 @@
     height: 250px;
     object-fit: cover;
     border-radius: 20px;
+}
+
+.main-footer {
+    background-color: var(--dark-navy);
+    color: white;
+    padding: 60px 10% 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: var(--primary-orange);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--primary-orange);
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    flex-grow: 1;
+}
+
+.subscribe-form button {
+    background-color: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-orange);
+    transform: translateY(-3px);
 }

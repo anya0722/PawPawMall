@@ -14,6 +14,7 @@
 
 <%@ include file="/includes/header.jsp" %>
 
+
 <%-- Hero Section--%>
 <section class="hero-section">
     <div class="hero-container">
@@ -81,6 +82,6 @@
     </div>
 </section>
 
-Wait to insert footer...
+<%@include file="/includes/footer.jsp"%>
 </body>
 </html>
