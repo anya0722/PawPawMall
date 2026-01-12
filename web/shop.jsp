@@ -56,8 +56,6 @@
                     <i class="fa-solid fa-magnifying-glass"></i> Filter
                 </button>
 
-                <a href="<%= ctx %>/ShopServlet" class="reset-btn">Reset</a>
-
                 <%-- In case user want to see all products again after filter --%>
                 <a href="<%= ctx %>/ShopServlet" class="view-all-btn">
                     <i class="fa-solid fa-border-all"></i> View All
