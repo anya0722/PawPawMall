@@ -101,7 +101,7 @@
 
         <form action="<%= ctx %>/ProductManagementServlet" method="post" enctype="multipart/form-data" class="auth-form">
             <input type="hidden" name="action" id="formAction" value="add">
-            <input type="hidden" name="productId" id="prodId">
+            <input type="hidden" name="id" id="prodId">
             <input type="hidden" name="existingImagePath" id="existingPath">
 
             <div class="form-group">

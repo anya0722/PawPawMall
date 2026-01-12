@@ -44,9 +44,9 @@ public class ProductManagementServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
         if (!isAdmin(request)) {
-            request.setCharacterEncoding("UTF-8");
+
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied.");
             return;
         }
