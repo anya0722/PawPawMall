@@ -78,9 +78,13 @@
                         <h3><%= p.getName() %></h3>
                         <div class="item-footer">
                             <span class="price">$<%= String.format("%.2f", p.getPrice()) %></span>
-                            <a href="<%= ctx %>/CartServlet?action=add&productId=<%= p.getId() %>" class="add-to-cart">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </a>
+                            <form action="<%= ctx %>/CartServlet" method="post" style="display: inline;">
+                                <input type="hidden" name="action" value="add">
+                                <input type="hidden" name="productId" value="<%= p.getId() %>">
+                                <button type="submit" class="add-to-cart" style="border: none; background: none; cursor: pointer; padding: 0;">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
