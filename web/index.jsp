@@ -19,19 +19,24 @@
 <section class="hero-section">
     <div class="hero-container">
         <div class="hero-content">
-            <h1 class="hero-main-title">Your Pet, <br><span class="orange-text">Our Priority</span></h1>
+            <h1 class="hero-main-title">Your Cat, <br><span class="orange-text">Our Priority</span></h1>
             <p class="hero-subtitle">Expertly selected cat food and toys to fuel their zoomies and purrs. Only the best for your paw-some friends.</p>
-            <div class="hero-btns">
+
+            <div class="hero-buttons">
                 <a href="<%= ctx %>/ShopServlet" class="btn-filled">Discover More</a>
                 <% if (currentUser == null) { %>
                 <a href="<%= ctx %>/login.jsp" class="btn-outline">Log in</a>
                 <% } %>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Happy Cat">
-        </div>
     </div>
+
+    <div class="custom-shape-divider-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path class="shape-fill" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,234.7C672,224,768,160,864,149.3C960,139,1056,181,1152,186.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
 </section>
 
 <%--Shop by Category--%>
