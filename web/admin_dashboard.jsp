@@ -59,12 +59,17 @@
         <h2>Quick Actions</h2>
         <div class="action-btns">
             <a href="<%= ctx %>/ProductManagementServlet" class="action-card">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <i class="fa-solid fa-boxes-stacked"></i>
                 <span>Manage Products</span>
             </a>
             <a href="<%= ctx %>/OrderServlet" class="action-card">
                 <i class="fa-solid fa-truck-fast"></i>
                 <span>Review Orders</span>
+            </a>
+            <%-- Admin add adminn botton --%>
+            <a href="<%= ctx %>/admin_add_admin.jsp" class="action-card">
+                <i class="fa-solid fa-user-plus"></i>
+                <span>Add New Admin</span>
             </a>
         </div>
     </section>
