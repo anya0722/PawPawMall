@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List, model.Product" %>
 <%
-    List<Product> allProducts = (List<Product>) request.getAttribute("allProducts");
+    List<Product> allProducts = (List<Product>) request.getAttribute("productList");
 %>
 <%@ include file="/includes/header.jsp" %>
 <!DOCTYPE html>
