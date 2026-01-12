@@ -61,9 +61,13 @@
             <div class="item-info">
                 <h3><%= p.getName() %></h3>
                 <p class="price">$<%= p.getPrice() %></p>
-                <a href="<%= ctx %>/CartServlet?action=add&productId=<%= p.getId() %>" class="add-to-cart">
-                    <i class="fa-solid fa-plus"></i>
-                </a>
+                <form action="<%= ctx %>/CartServlet" method="post" style="display: inline;">
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="productId" value="<%= p.getId() %>">
+                    <button type="submit" class="add-to-cart" style="border: none; background: none; cursor: pointer; padding: 0;">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </form>
             </div>
         </div>
         <% } } else { %>

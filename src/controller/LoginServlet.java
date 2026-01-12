@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             if ("admin".equalsIgnoreCase(user.getRole())) {
                 response.sendRedirect("admin_dashboard.jsp"); // Going to admin dashboard
             } else {
-                response.sendRedirect("home.jsp"); // Back to homepage
+                response.sendRedirect("index"); // Back to homepage
             }
         } else {
             // fail in logging in
