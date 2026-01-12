@@ -139,6 +139,7 @@
                 <span class="total-amount">$<%= String.format("%.2f", order.getTotalPrice()) %></span>
             </div>
         </div>
+    </div>
     <%
             }
         }
