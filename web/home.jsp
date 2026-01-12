@@ -43,10 +43,25 @@
 <section class="category-section">
     <h2 class="section-title">Shop by Category</h2>
     <div class="category-grid">
-        <div class="cat-card"><img src="<%= ctx %>/images/cat-new.jpg"><span>New Arrivals</span></div>
-        <div class="cat-card"><img src="<%= ctx %>/images/cat-toys.jpg"><span>Cat Toys</span></div>
-        <div class="cat-card"><img src="<%= ctx %>/images/cat-food.jpg"><span>Cat Food</span></div>
-        <div class="cat-card"><img src="<%= ctx %>/images/cat-sale.jpg"><span>On Sale</span></div>
+        <a href="<%= ctx %>/ShopServlet?category=New arrivals" class="cat-card">
+            <img src="<%= ctx %>/images/cat-new.jpg">
+            <span>New Arrivals</span>
+        </a>
+
+        <a href="<%= ctx %>/ShopServlet?category=Cat Toys" class="cat-card">
+            <img src="<%= ctx %>/images/cat-toys.jpg">
+            <span>Cat Toys</span>
+        </a>
+
+        <a href="<%= ctx %>/ShopServlet?category=Cat Food" class="cat-card">
+            <img src="<%= ctx %>/images/cat-food.jpg">
+            <span>Cat Food</span>
+        </a>
+
+        <a href="<%= ctx %>/ShopServlet?category=On Sale" class="cat-card">
+            <img src="<%= ctx %>/images/cat-sale.jpg">
+            <span>On Sale</span>
+        </a>
     </div>
 </section>
 
@@ -77,7 +92,7 @@
 </section>
 
 <%--About Us & Team --%>
-<section class="info-section">
+<section class="info-section" id="about-us">
     <div class="about-container">
         <h2 class="section-title">About PawPawMall</h2>
         <div class="about-bar">

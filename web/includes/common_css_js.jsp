@@ -33,3 +33,9 @@
 </style>
 
 <script src="<%= ctx %>/js/main.js" defer></script>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
