@@ -67,7 +67,7 @@
                 <span>Review Orders</span>
             </a>
             <%-- Admin add adminn botton --%>
-            <a href="<%= ctx %>/admin_add_admin.jsp" class="action-card">
+            <a href="<%= ctx %>/AdminRegisterServlet" class="action-card">
                 <i class="fa-solid fa-user-plus"></i>
                 <span>Add New Admin</span>
             </a>

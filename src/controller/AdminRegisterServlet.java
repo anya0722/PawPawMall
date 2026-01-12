@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/AdminServlet")
+@WebServlet("/AdminRegisterServlet")
 public class AdminRegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -46,7 +46,7 @@ public class AdminRegisterServlet extends HttpServlet {
 
             UserDAO userDAO = new UserDAO();
             if (userDAO.register(newAdmin)) {
-                request.setAttribute("successMessage", "Admin account " + username + "is signed up！");
+                request.setAttribute("successMessage", "Admin account " + username + " is signed up！");
             } else {
                 request.setAttribute("errorMessage", "Signed up failed. Please change your username and try again.");
             }
@@ -56,6 +56,6 @@ public class AdminRegisterServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("admin_dashboard.jsp");
+        request.getRequestDispatcher("admin_add_admin.jsp").forward(request, response);
     }
-}
+    }

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/includes/common_css_js.jsp" %>
+<%@ include file="/includes/header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body class="admin-body">
 
-<%@ include file="/includes/header.jsp" %>
+
 
 <div class="admin-page-container">
     <div class="auth-card" style="margin-top: 50px;">
@@ -21,14 +21,22 @@
         <p>Register a new administrator with full system access.</p>
 
         <form action="<%= ctx %>/AdminRegisterServlet" method="post" class="auth-form">
+
+            <input type="hidden" name="action" value="addAdmin">
+
             <div class="form-group">
                 <label>Admin Username</label>
                 <input type="text" name="username" placeholder="Enter admin username" required>
             </div>
 
             <div class="form-group">
-                <label>Temporary Password</label>
+                <label>Password</label>
                 <input type="password" name="password" placeholder="Create a secure password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
             </div>
 
             <% if (request.getAttribute("errorMessage") != null) { %>
@@ -41,7 +49,6 @@
 
             <button type="submit" class="btn-filled auth-btn">Create Admin Account</button>
         </form>
-
         <div style="margin-top: 20px;">
             <a href="<%= ctx %>/AdminDashboard" class="btn-outline" style="display: block; text-align: center;">
                 <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
