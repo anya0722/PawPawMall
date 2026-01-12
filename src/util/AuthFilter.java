@@ -32,7 +32,7 @@ public class AuthFilter implements Filter {
         // Define those pages that can be accessed by unlogged in user as public pages
         boolean isPublicPage = uri.endsWith("login.jsp") ||
                 uri.endsWith("register.jsp") ||
-                uri.endsWith("index.jsp") ||
+                uri.endsWith("home.jsp") ||
                 uri.endsWith("LoginServlet") ||
                 uri.endsWith("RegisterServlet") ||
                 uri.contains("/assets/") || // The place storing images

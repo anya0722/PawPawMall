@@ -19,13 +19,15 @@ public class HomeServlet extends HttpServlet {
         ProductDAO productDAO = new ProductDAO();
 
         // Since home page only has a section showing New Arrivals
-        String targetCategory = "New arrivals";
+        String targetCategory = "New Arrivals";
         List<Product> productList = productDAO.getProductsByCategory(targetCategory);
 
         request.setAttribute("productList", productList);
         request.setAttribute("currentCategory", targetCategory);
-        
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        request.getRequestDispatcher("home.jsp").forward(request, response);
+
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
