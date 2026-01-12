@@ -39,6 +39,7 @@ public class UserDAO {
 
             pstmt.setString(1, username);
             String hashedPassword = PasswordUtil.hashPassword(password);
+            pstmt.setString(2, hashedPassword);
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
