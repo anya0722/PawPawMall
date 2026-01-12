@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/pawpawmall?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/pawpawmall?serverTimezone=Asia/Kuala_Lumpur&useSSL=false";
     private static final String USER = "root";
     private static final String PASSWORD = "PawPawMall";
 
