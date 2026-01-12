@@ -984,3 +984,203 @@
     color: var(--primary-orange);
     box-shadow: 0 5px 15px rgba(255,107,0,0.1);
 }
+
+
+
+
+/* Admin Page */
+.admin-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: 80vh;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.page-header h2 {
+    color: var(--dark-navy);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- Products management--- */
+.management-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.management-table th {
+    background: #f8fafc;
+    padding: 18px 20px;
+    text-align: left;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.management-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.management-table tr:last-child td {
+    border-bottom: none;
+}
+
+.management-table tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Product picture */
+.prod-img-small {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s;
+}
+
+.prod-img-small:hover {
+    transform: scale(1.1);
+}
+
+/* --- Stock and status --- */
+.stock-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.stock-normal {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.stock-low {
+    background-color: #fee2e2;
+    color: #991b1b;
+    animation: pulse 2s infinite; /* Low stock */
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* --- Buttons --- */
+.action-group {
+    display: flex;
+    gap: 12px;
+}
+
+.edit-btn, .del-btn {
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+    padding: 5px;
+}
+
+.edit-btn { color: #3b82f6; }
+.edit-btn:hover { color: #2563eb; transform: scale(1.2); }
+
+.del-btn { color: #ef4444; }
+.del-btn:hover { color: #dc2626; transform: scale(1.2); }
+
+/* --- Modal when edit or add products--- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    margin: 3% auto;
+    padding: 35px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 25px; top: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.close-btn:hover { color: #334155; }
+
+/* --- Modal box --- */
+.preview-box {
+    width: 100%;
+    height: 200px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f8fafc;
+    position: relative;
+}
+
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+#previewPlaceholder {
+    color: #94a3b8;
+    text-align: center;
+}
+
+#previewPlaceholder i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
