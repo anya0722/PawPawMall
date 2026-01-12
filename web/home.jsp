@@ -73,17 +73,60 @@
 </section>
 
 <%--About Us & Team --%>
-<section class="about-team" id="about-us">
-    <div class="about-box">
-        <h2>About PawPawMall</h2>
-        <p>We are a team of USM students passionate about pets and software development.</p>
+<section class="info-section">
+    <div class="about-container">
+        <h2 class="section-title">About PawPawMall</h2>
+        <div class="about-bar">
+            <div class="about-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="about-text">
+                <h3>Our History</h3>
+                <p>Started as a small university project at USM, we've grown into a passionate community dedicated to providing the best for your feline friends.</p>
+            </div>
+        </div>
+        <div class="about-bar">
+            <div class="about-icon"><i class="fa-solid fa-shield-cat"></i></div>
+            <div class="about-text">
+                <h3>Professionalism</h3>
+                <p>Every product is hand-picked by pet lovers and verified for quality, ensuring your cat stays healthy and happy.</p>
+            </div>
+        </div>
     </div>
-    <div class="team-box">
-        <h2>Our Team</h2>
-        <ul>
-            <li>Team</li>
-            <%-- Wait to insert team introduction --%>
-        </ul>
+
+    <%--Our Team --%>
+    <div class="team-section">
+        <h2 class="section-title">Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="member-img">
+                    <img src="<%= ctx %>/images/member1.jpg" alt="Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Cui Huimin</h3>
+                    <p class="role">CEO & Founder</p>
+                    <p class="bio">Elevating the lives of felines and their families through uncompromising quality and love.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="member-img">
+                    <img src="<%= ctx %>/images/member2.jpg" alt="Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Zou Xinyan</h3>
+                    <p class="role">CMO & COO</p>
+                    <p class="bio">Connecting hearts and paws by sharing the stories that make every cat unique.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="member-img">
+                    <img src="<%= ctx %>/images/member3.jpg" alt="Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Miao Miao</h3>
+                    <p class="role">CEO's cat / The Real Boss</p>
+                    <p class="bio">The true power behind the throne, fueled by premium treats and afternoon sunbeams.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
