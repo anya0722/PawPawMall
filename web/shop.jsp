@@ -35,9 +35,10 @@
                     <label>Category</label>
                     <select name="category">
                         <option value="">All Categories</option>
-                        <option value="Food" <%= "Food".equals(category) ? "selected" : "" %>>Food</option>
-                        <option value="Toys" <%= "Toys".equals(category) ? "selected" : "" %>>Toys</option>
-                        <option value="Accessories" <%= "Accessories".equals(category) ? "selected" : "" %>>Accessories</option>
+                        <option value="New arrivals" <%= "New arrivals".equals(category) ? "selected" : "" %>>New Arrivals</option>
+                        <option value="Cat Food" <%= "Cat Food".equals(category) ? "selected" : "" %>>Cat Food</option>
+                        <option value="Cat Toys" <%= "Cat Toys".equals(category) ? "selected" : "" %>>Cat Toys</option>
+                        <option value="On Sale" <%= "On Sale".equals(category) ? "selected" : "" %>>On Sale</option>
                     </select>
                 </div>
 
