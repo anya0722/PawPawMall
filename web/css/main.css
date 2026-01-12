@@ -417,3 +417,121 @@
     color: #ef4444;
     transform: scale(1.1);
 }
+
+/* Shop page */
+.shop-page {
+    padding: 40px 5%;
+    background-color: #f9f9f9;
+}
+
+/* combo search */
+.search-filter-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.combo-search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #64748b;
+}
+
+.filter-group input, .filter-group select {
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+/* Search boxes */
+.filter-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.search-btn {
+    background-color: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-all-btn {
+    background-color: #ffffff;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-all-btn:hover {
+    background-color: #f8fafc;
+    color: var(--primary-orange);
+    border-color: var(--primary-orange);
+}
+
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.price-row input {
+    width: 80px !important;
+}
+
+.search-btn:hover {
+    background-color: #e67e22;
+}
+
+
+.reset-btn {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 42px;
+}
+
+
+.category-label {
+    font-size: 0.75rem;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
