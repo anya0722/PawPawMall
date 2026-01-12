@@ -1,0 +1,51 @@
+/* Hero Section */
+.hero-section {
+    background-color: var(--bg-warm);
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 40px; 
+    box-shadow: 20px 20px 60px #d9d4cf, -20px -20px 60px #ffffff;
+}
+
+/* buttons */
+.btn-filled {
+    background-color: var(--primary-orange);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+    padding: 10px 26px;
+    border-radius: 25px;
+    margin-left: 15px;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px 10%;
+}
+
+.cat-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
