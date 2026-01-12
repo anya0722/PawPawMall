@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.annotation.MultipartConfig;
-
 // Product management method for Admins
 @WebServlet("/ProductManagementServlet")
 @MultipartConfig(
@@ -47,6 +46,7 @@ public class ProductManagementServlet extends HttpServlet {
             throws ServletException, IOException {
 
         if (!isAdmin(request)) {
+            request.setCharacterEncoding("UTF-8");
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied.");
             return;
         }
@@ -76,7 +76,7 @@ public class ProductManagementServlet extends HttpServlet {
 
         String uploadPath = getServletContext().getRealPath("/") + "uploads";
 
-        String savedPath = FileUploadUtil.saveFile(request.getPart("imageFile"), uploadPath);
+        String savedPath = FileUploadUtil.saveFile(request.getPart("image"), uploadPath);
         p.setImagePath(savedPath);
 
         if (productDAO.addProduct(p)) {
@@ -93,7 +93,7 @@ public class ProductManagementServlet extends HttpServlet {
         p.setId(Integer.parseInt(request.getParameter("id")));
 
         String uploadPath = getServletContext().getRealPath("/") + "uploads";
-        String newPath = FileUploadUtil.saveFile(request.getPart("imageFile"), uploadPath);
+        String newPath = FileUploadUtil.saveFile(request.getPart("image"), uploadPath);
 
         if (newPath != null) {
             p.setImagePath(newPath);
