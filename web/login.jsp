@@ -16,6 +16,12 @@
     <title><%= isAdminMode ? "Staff Login" : "User Login" %> - PawPawMall</title>
     <link rel="stylesheet" href="<%= ctx %>/css/main.css">
 </head>
+
+<body class="auth-body">
+<a href="javascript:history.back()" class="back-to-prev">
+    <i class="fa-solid fa-chevron-left"></i> Back
+</a>
+
 <body class="auth-body">
 
 <div class="auth-container">
