@@ -29,6 +29,11 @@ public class CheckoutServlet extends HttpServlet {
             return;
         }
 
+
+        String fullName = request.getParameter("fullName");
+        String address = request.getParameter("address");
+
+
         CartDAO cartDAO = new CartDAO();
         OrderDAO orderDAO = new OrderDAO();
 
@@ -48,6 +53,8 @@ public class CheckoutServlet extends HttpServlet {
 
         if (isSuccess) {
 
+            session.setAttribute("lastReceiver", fullName);
+            session.setAttribute("lastAddress", address);
             response.sendRedirect("order_success.jsp");
         } else {
 
@@ -58,6 +65,23 @@ public class CheckoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("CartServlet");
+        HttpSession session = request.getSession(false);
+        User user = (session != null) ? (User) session.getAttribute("currentUser") : null;
+
+        if (user == null) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+
+        CartDAO cartDAO = new CartDAO();
+        List<CartItem> cartItems = cartDAO.getCartByUser(user.getId());
+
+        if (cartItems == null || cartItems.isEmpty()) {
+            response.sendRedirect("CartServlet");
+            return;
+        }
+
+        request.setAttribute("cartItems", cartItems);
+        request.getRequestDispatcher("checkout.jsp").forward(request, response);
     }
 }

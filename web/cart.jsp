@@ -93,7 +93,8 @@
                     <span>$<%= String.format("%.2f", cart.getTotalPrice()) %></span>
                 </div>
 
-                <form action="<%= ctx %>/CheckoutServlet" method="post">
+
+                <form action="<%= ctx %>/CheckoutServlet" method="get">
                     <button type="submit" class="btn-filled checkout-btn">Proceed to Checkout</button>
                 </form>
 

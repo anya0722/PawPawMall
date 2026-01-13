@@ -1514,3 +1514,133 @@ button:disabled {
     cursor: not-allowed !important;
     pointer-events: none;
 }
+
+
+/* Checkout Page */
+
+.checkout-section {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-subtitle {
+    margin-bottom: 20px;
+    color: #1e293b;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    flex: 1;
+    cursor: pointer;
+}
+
+.payment-option input {
+    display: none;
+}
+
+.method-box {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #f1f5f9;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.payment-option input:checked + .method-box {
+    border-color: #ff6b35;
+    background: #fff7f3;
+    color: #ff6b35;
+}
+
+.bank-selection {
+    margin-top: 20px;
+}
+
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.bank-item {
+    display: block;
+    cursor: pointer;
+}
+
+.bank-item input {
+    display: none;
+}
+
+.bank-box {
+    padding: 12px 5px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    text-align: center;
+    background: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.bank-box:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
+.bank-item input:checked + .bank-box {
+    border-color: #ff6b35;
+    background: #fff7f3;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+}
+
+.bank-item input:checked + .bank-box span {
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+.bank-logo-mock {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 5px;
+    color: #64748b;
+}
+
+.summary-items-preview {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.item-name-preview {
+    font-size: 0.85rem;
+    color: #64748b;
+}
