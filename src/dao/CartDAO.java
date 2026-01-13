@@ -49,7 +49,7 @@ public class CartDAO {
     public List<CartItem> getCartByUser(int userId) {
         List<CartItem> list = new ArrayList<>();
 
-        String sql = "SELECT c.*, p.name, p.price, p.image_path, p.description " +
+        String sql = "SELECT c.*, p.name, p.price, p.image_path, p.description, p.stock " +
                 "FROM cart c JOIN products p ON c.product_id = p.id " +
                 "WHERE c.user_id = ?";
 
@@ -70,6 +70,7 @@ public class CartDAO {
                     p.setPrice(rs.getDouble("price"));
                     p.setImagePath(rs.getString("image_path"));
                     p.setDescription(rs.getString("description"));
+                    p.setStock(rs.getInt("stock"));
                     item.setProduct(p);
 
                     list.add(item);

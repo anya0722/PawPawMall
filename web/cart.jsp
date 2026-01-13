@@ -60,7 +60,8 @@
                         <form action="<%= ctx %>/CartServlet" method="post">
                             <input type="hidden" name="action" value="add">
                             <input type="hidden" name="productId" value="<%= item.getProductId() %>">
-                            <button type="submit" class="qty-btn">
+                            <button type="submit" class="qty-btn"
+                                    <%=(item.getQuantity() >= item.getProduct().getStock()) ? "disabled title='Exceed stock limit' style='opacity: 0.5; cursor: not-allowed;'" : "" %>>
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </form>

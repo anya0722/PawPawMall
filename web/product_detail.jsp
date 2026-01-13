@@ -35,8 +35,13 @@
             <form action="<%= ctx %>/CartServlet" method="post">
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="productId" value="<%= p.getId() %>">
-                <button type="submit" class="btn-filled" style="padding: 15px 40px; font-size: 1.1rem;">
-                    <i class="fa-solid fa-cart-plus"></i> Add to cart
+                <button type="submit"
+                        class="btn-filled"
+                        style="padding: 15px 40px; font-size: 1.1rem; <%= p.getStock() <= 0 ? "background-color: #cbd5e1; cursor: not-allowed;" : "" %>"
+                        <%= p.getStock() <= 0 ? "disabled" : "" %>>
+
+                    <i class="fa-solid <%= p.getStock() <= 0 ? "fa-ban" : "fa-cart-plus" %>"></i>
+                    <%= p.getStock() <= 0 ? "Out of Stock" : "Add to cart" %>
                 </button>
             </form>
         </div>
